@@ -38,7 +38,7 @@ public class PredefinedStepDefs {
     public void iMaximizeWindow() {
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
         Dimension maxWindowSize = new Dimension((int) screenSize.getWidth(), (int) screenSize.getHeight());
-        getDriver().manage().window().setPosition(new Point(0,0));
+        getDriver().manage().window().setPosition(new Point(0, 0));
         getDriver().manage().window().setSize(maxWindowSize);
     }
 
@@ -164,7 +164,7 @@ public class PredefinedStepDefs {
     public void iSwitchToNewWindow() {
         Iterator<String> iterator = getDriver().getWindowHandles().iterator();
         String newWindow = iterator.next();
-        while(iterator.hasNext()) {
+        while (iterator.hasNext()) {
             newWindow = iterator.next();
         }
         getDriver().switchTo().window(newWindow);
@@ -223,4 +223,7 @@ public class PredefinedStepDefs {
     public void iMouseOverElementWithXpath(String xpath) {
         new Actions(getDriver()).moveToElement(getDriver().findElement(By.xpath(xpath))).perform();
     }
+
+    @Then("I wait for element with xpath {string}bd']\" to be present")
+    public void iWaitForElementWithXpathBdToBePresent(String arg0) throws Throwable {}   // Write code here that turns the phrase above into concrete actions    throw new cucumber.api.PendingException();}
 }
